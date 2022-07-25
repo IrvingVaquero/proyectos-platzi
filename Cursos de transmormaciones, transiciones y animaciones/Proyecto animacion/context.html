@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --dark-brown: #a54a38;
+            --light-brown: #bf624c;
+            --dark-green: #51af5e;
+            --light-green: #51af5e;
+            --shadow: 0 19px 38px rgba(0,0,0,0.30),
+                    0 15px 12px rgba(0,0,0,0.22);
+        }
+        body{
+            margin: 0;
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            background-image: url('https://us.123rf.com/450wm/valeo5/valeo51810/valeo5181000042/117771667-fondo-de-juego-antiguo-dise%C3%B1o-cl%C3%A1sico-de-arcade-retro-con-tuber%C3%ADa-y-ladrillo.jpg?ver=6');
+            background-size: contain;
+            background-position: center;
+            
+        }
+        .phone{
+            position: relative;
+            width: 320px;
+            height: 600px;
+            border: 8px solid rgb(18, 48, 63);
+            border-radius: 40px;
+            background-image: url('https://m.media-amazon.com/images/I/81uYUH5dkOL._AC_SL1500_.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 5px 5px 25px black,
+                        -5px -5px 15px white;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            counter-reset: game;
+        }
+        .encabezado{
+            margin-top: 35px;
+        }
+        .encabezado h3{
+            font-size: 25px;
+
+        }
+
+        input[type=checkbox]{
+            width: 100%;
+            cursor: pointer;
+            height: 78px;
+            margin: 0;
+            appearance: none;
+            z-index: 9;
+            position: absolute;
+            left: 0;
+        }
+
+        input:checked{
+            counter-increment: game 1;
+        }
+
+        .total::after{
+            content: counter(game);
+        }
+
+
+        .land {
+            background: linear-gradient(135deg, var(--dark-green) 25%, transparent 25%) -50px 0,
+                        linear-gradient(-135deg, var(--dark-green) 25%, transparent 25%) -50px 0,
+                        linear-gradient(45deg, var(--light-brown) 25%, transparent 25%),
+                        linear-gradient(-45deg, transparent 25%, var(--dark-brown) 25%);
+            background-size: 33px 30px;
+            height: 30px;
+            width: 100%;
+            
+        }
+        .lawn {
+            background: var(--dark-green);
+            height: 20px;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .layer-1{
+            position: absolute;
+            z-index: 1;
+            width: 84px;
+            height: 430px;
+            background-color: aliceblue;
+            bottom: 0;
+            right: 67px;
+            animation-name: cerdo;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes cerdo {
+            0%{
+                bottom: 0;
+
+            }
+
+            50%{
+                bottom: -55px;
+
+            }
+
+            70%{
+                bottom: 0;
+
+            }
+            
+            
+        }
+        .layer-2{
+            position: absolute;
+            z-index: 2;
+            width: 84px;
+            height: 430px;
+            background-color: aliceblue;
+            bottom: 0;
+            right: calc(50% - -8px);
+            animation-name: cerdo;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .layer-3{
+            position: absolute;
+            background: var(--light-brown);
+            box-shadow: var(--shadow);
+            z-index: 3;
+            width: 254px;
+            height: 380px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: 0;
+            border-radius: 20px 20px 0 0;
+        }
+        .layer-4{
+            position: absolute;
+            z-index: 4;
+            width: 84px;
+            height: 305px;
+            background-color: aliceblue;
+            bottom: 0;
+            left: 15px;
+            animation-name: cerdo;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .layer-5{
+            position: absolute;
+            z-index: 5;
+            width: 200px;
+            height: 255px;
+            background: var(--light-brown);
+            box-shadow: var(--shadow);
+            border-radius: 20px 20px 0 28px;
+            left: 0;
+            bottom: 0;
+        }
+        .layer-6{
+            position: absolute;
+            z-index: 6;
+            width: 84px;
+            height: 210px;
+            background-color: aliceblue;
+            bottom: 0;
+            right: 20px;
+            animation-name: cerdo;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .layer-7{
+            position: absolute;
+            z-index: 7;
+            width: 150px;
+            height: 160px;
+            background: var(--light-brown);
+            box-shadow: var(--shadow);
+            border-radius: 20px 20px 28px 0;
+            right: 0;
+            bottom: 0;
+        }
+        .layer-8{
+            position: absolute;
+            z-index: 8;
+            width: 150px;
+            height: 100px;
+            background-color: rgb(160, 112, 74);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: 0;
+        }
+        .layer-9{
+            position: absolute;
+            z-index: 9;
+            width: 150px;
+            height: 70px;
+            background-color: rgb(160, 112, 74);
+            left: 0;
+            bottom: 0;
+        }
+        .layer-10{
+            position: absolute;
+            z-index: 10;
+            width: 150px;
+            height: 70px;
+            background-color: rgb(160, 112, 74);
+            right: 0;
+            bottom: 0;
+
+        }
+        .botones{
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            background-color:  rgba(18, 48, 63, 0.633);
+            bottom: 0;
+            border-radius: 0 0 28px 28px;
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            z-index: 11;
+        }
+        .boton{
+            margin-top: 8px;
+
+        }
+        .boton span{
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-image: url('./assets/icons/back.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .boton:nth-child(2) span{
+            background-image: url('./assets/icons/rec.png');
+        }
+        .boton:nth-child(3) span{
+            background-image: url('./assets/icons/arrow-right.png');
+        }
+        .camara{
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            border-radius: 28px 28px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .camara span{
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-image: url('./assets/icons/rec\ \(1\).png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .phone .layer-1,
+        .phone .layer-2,
+        .phone .layer-4,
+        .phone .layer-6{ 
+            border: none;
+            background-color: transparent;
+        }
+
+        .layer-1 div,
+        .layer-2 div,
+        .layer-4 div,
+        .layer-6 div{
+            border: none;
+        }
+
+        div.right-ear--outer{
+            width: 20px;
+            height: 15px;
+            border-radius: 227px 50px 400px 42px / 144px 25px 117px 18px;
+            background-color: pink;
+            position: absolute;
+            right: 0;
+            top: 19px;
+            border-color: palevioletred;
+        }
+
+        .left-ear--outer{
+            width: 20px;
+            height: 20px;
+            border-radius: 303px 373px 350px 367px / 0px 150px 0px 150px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 19px;
+        }
+
+        .head{
+            width: 100%;
+            height: 78px;
+            border-radius: 50%;
+            background-color: pink;
+            position: absolute;
+            top: 22px;
+        }
+
+        .head-eye{
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 26px 0 black;
+            left: 25px;
+            top: 15px;
+            animation-name: eyes;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes eyes {
+            0%{
+                height: 10px;
+            }
+            5%{
+                transform: translateY(5px);
+                height: 1px;
+            }
+            10%{
+                transform: translateY(0);
+                height: 10px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="phone">
+        
+        <div class="camara">
+            <span></span>
+        </div>
+        <div class="layer-1">
+            <input type="checkbox" name="" id="">
+            <div class="left-ear--outer"></div>
+            <div class="left-ear--inter"></div>
+            <div class="right-ear--outer"></div>
+            <div class="right-ear--inter"></div>
+            <div class="head">
+                <div class="head-eye head-eye--left"></div>
+                
+            </div>
+        </div>
+        <div class="layer-2">
+            <input type="checkbox" name="" id="">
+            <div class="left-ear--outer"></div>
+            <div class="left-ear--inter"></div>
+            <div class="right-ear--outer"></div>
+            <div class="right-ear--inter"></div>
+            <div class="head">
+                <div class="head-eye head-eye--left"></div>
+                
+            </div>
+        </div>
+        <div class="layer-3">
+            <div class="lawn"></div>
+            <div class="land"></div>
+        </div>
+        <div class="layer-4">
+            <input type="checkbox" name="" id="">
+            <div class="left-ear--outer"></div>
+            <div class="left-ear--inter"></div>
+            <div class="right-ear--outer"></div>
+            <div class="right-ear--inter"></div>
+            <div class="head">
+                <div class="head-eye head-eye--left"></div>
+                
+            </div>
+        </div>
+        <div class="layer-5">
+            <div class="lawn"></div>
+            <div class="land"></div>
+        </div>
+        <div class="layer-6">
+            <input type="checkbox" name="" id="">
+            <div class="left-ear--outer"></div>
+            <div class="left-ear--inter"></div>
+            <div class="right-ear--outer"></div>
+            <div class="right-ear--inter"></div>
+            <div class="head">
+                <div class="head-eye head-eye--left"></div>
+                
+            </div>
+        </div>
+        <div class="layer-7">
+            <div class="lawn"></div>
+            <div class="land"></div>
+        </div>
+        
+
+        <div class="botones">
+            <div class="boton"><a href="/"><span></span></a></div>
+            <div class="boton"><a href="/"><span></span></a></div>
+            <div class="boton"><a href="/"><span></span></a></div>
+        </div>
+        <div class="encabezado">
+            <h1>Bienvenido</h1>
+            <h3 class="total">Score: </h3>
+        </div>
+    </div>
+
+</body>
+</html>

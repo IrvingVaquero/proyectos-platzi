@@ -1,0 +1,1 @@
+let usuario = Number(prompt("Ingresa una de la siguientes opciones"));

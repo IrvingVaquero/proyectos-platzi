@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Home 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+        }
+        :root{
+            --Very-light-pink: #C7C7C7;
+            --Hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --Dark: #232830;
+            --Text-input-field: #F7F7F7;
+            --Black: #000000;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+        }
+        .mobilemenu{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 20px 0 20px;
+        }
+        .mobilemenu ul{
+            list-style-type: none;
+        }
+        .mobilemenu ul li{
+            font-size: var(--md);
+            color: var(--Black);
+            font-weight: bold;
+        }
+        .mobilemenu ul:nth-child(1) li:nth-child(1){
+            padding-bottom: 20px;
+        }
+        .mobilemenu ul li a{
+            display: inline-block;
+            width: 100%;
+            padding: 20px 0;
+            font-size: var(--md);
+            font-weight: bold;
+            color: var(--Black);
+            text-decoration: none;
+        }
+        .mobilemenu ul li a:hover{
+            background-color: var(--Text-input-field);
+        }
+        .mobilemenu div{
+            margin-bottom: 50px;
+        }
+        .mobilemenu div p{
+            font-size: var(--sm);
+        }
+        .mobilemenu div a{
+            text-decoration: none;
+            color: var(--Hospital-green);
+            font-size: var(--sm);
+        }
+    </style>
+</head>
+<body>
+    <div class="mobilemenu">
+        <ul>
+            <li>CATEGORIES</li>
+            <li><a href="">All</a></li>
+            <li><a href="">Clothes</a></li>
+            <li><a href="">Electronics</a></li>
+            <li><a href="">Furnitures</a></li>
+            <li><a href="">Toys</a></li>
+            <li><a href="">Other</a></li></ul>
+        <ul>
+            <li><a href="">My orders</a></li>
+            <li><a href="">My occount</a></li>
+        </ul>
+        <div>
+            <p>
+                ivaqueroflores@gmail.com
+            </p>
+            <a href="">Sign up</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>
+        div.circle-container div{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(0,0,0,1) 100%);
+            border-radius: 100%;
+        }
+
+        div.circle-container{
+            position: relative;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width:300px; 
+            height:600px; 
+            
+        }
+        div.circle-container div:nth-child(1){
+            z-index: 4;
+        }
+        div.circle-container div:nth-child(2){
+            top: 150px;
+            z-index: 3;
+        }
+        div.circle-container div:nth-child(3){
+            top: 265px;
+            z-index: 2;
+        }
+        div.circle-container div:nth-child(4){
+            top: 400px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="circle-container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

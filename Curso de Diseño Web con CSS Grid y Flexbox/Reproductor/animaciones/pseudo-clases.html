@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+
+        @media (prefers-reduced-motion: no-preference) {
+    /* Código de animaciones */
+}
+
+/* Código sin animaciones */
+
+agregar dentro del media todo lo que son animaciones
+    -->
+    <style>
+        /*Link no cisitado*/
+        a:link{ 
+            color: aqua;
+        }
+        /*Link visitado*/
+        a:visited{
+            color: tomato;
+        }
+        /*Mouse ensima*/
+        a:hover{
+            color: black;
+        }
+        /*que no pertenesca a esta clase*/
+        p:not(.maravkka){
+            color: blue;
+        }
+        /*El hijo segun*/
+        .container div:nth-child(1){
+
+        }
+        /*Agregar contenido antes*/
+        div::before{
+            content: ":)";
+        }
+        /*Agregar contenido despues*/
+        div::after{
+            content: ":)";
+
+        }
+        /*Timing functions
+        link ejemplo: https://easings.net/
+        Link crear: https://cubic-bezier.com/#.17,.67,.83,.67
+        */
+
+        /*Propiedad transform*/
+
+        /*Modificamos la escala*/
+        a{
+            transform: scale(1.5);
+        }
+
+        /*Estiramiento en grados*/
+        a{
+            transform: skew(20deg);
+        }
+
+        /*Se rota en su eje grados*/
+        a{
+            transform: rotate(20deg);
+        }
+
+        /*Nota: SLICEBOX*/
+        
+
+
+        /*Transform-origin
+        De donde comenzara
+        */
+
+        a{
+            transform-origin: right top;
+        }
+
+        /*Animacion 3d*/
+
+        /*Perspective es la profuncidd*/
+
+        section{
+            position: relative;
+            perspective: 100px;
+        }
+
+        .calle{
+            position: absolute;
+            transform-style: preserve-3d;
+            transform: rotateX(20deg) rotateZ(-20deg) rotateY(5deg);
+        }
+
+        /*Parallax*/
+
+
+
+
+    </style>
+</head>
+<body>
+    <a href="">Alicia</a>
+</body>
+</html>
