@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.grid--container{
+    max-width: 980px;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    width: 100%;
+    height: 140px;
+    display: grid;
+    grid-auto-rows: repeat(2, 1fr);
+}
+
+header .header-icons-container{
+    width: 100%;
+    height: 50px;
+    display: grid;
+    background-color: rgba(14, 13, 13, 0.988);
+}
+
+header .header-icons-container .icons--header{
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    justify-items: flex-end;
+    justify-self: flex-end;
+    align-items: center;
+    margin-right: 50px;
+}
+
+header .header-icons-container .icons--header span{
+    color: white;
+}
+
+header .header-icons-container .icons--header span:hover{
+    transition: 0.5s;
+    color: #47cfac;
+}
+
+header .header-nav-container{
+    width: 100%;
+    height: 90px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.header-logo img{
+    width: 120px;
+
+}
+
+header .header-link{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 50px;
+}
+.header-link a{
+    border-bottom: 1px solid;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.header-link a:hover{
+    transition: 1s;
+    border-color: #47cfac;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+main .main-container{
+    width: 100%;
+    height: calc(100% - 140px);
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    background-image: url('https://images.pexels.com/photos/376533/pexels-photo-376533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-title{
+    width: 500px;
+    text-align: center;
+    
+}
+.main-title p,a{
+    color: white;
+    font-size: 1.6rem;
+}
+
+main .main-title p{
+    letter-spacing: 5px;
+    font-size: 2rem;
+    background-color: black;
+    border-bottom: 1px solid #47cfac;
+}
+.main-title a{
+    background-color: black;
+    border: 1px solid #47cfac;
+    padding: 10px;
+    border-radius: 10px;
+}
+.main-title a:hover{
+    border-color: white;
+    color: #47cfac;
+}
+
